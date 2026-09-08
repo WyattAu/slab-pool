@@ -1,0 +1,32 @@
+[package]
+name = "slab-pool"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.85"
+description = "Lock-free slab object pool — tagged-pointer ABA protection, RAII guards, thread-safe alloc/free"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/WyattAu/slab-pool"
+keywords = ["pool", "slab", "lock-free", "arena", "allocator"]
+categories = ["concurrency", "memory-management"]
+exclude = ["/target"]
+
+[dependencies]
+thiserror = "2"
+loom = { version = "0.7", optional = true }
+
+[dev-dependencies]
+criterion = { version = "0.5" }
+proptest = "1"
+tokio = { version = "1", features = ["rt-multi-thread", "sync", "macros", "time"] }
+
+[[bench]]
+name = "pool_bench"
+harness = false
+
+[features]
+default = ["std"]
+std = []
+loom = ["dep:loom"]
+
+[lints.rust]
+unexpected_cfgs = { level = "warn", check-cfg = ['cfg(kani)'] }
