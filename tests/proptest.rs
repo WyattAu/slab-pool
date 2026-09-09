@@ -1,4 +1,6 @@
 //! Model-based property tests: arbitrary op sequences against the live-slot set.
+// Test code: unwrap/expect are the idiomatic way to assert outcomes.
+#![allow(clippy::unwrap_used, clippy::expect_used)]
 
 use proptest::prelude::*;
 use slab_pool::SlabPool;

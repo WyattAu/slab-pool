@@ -1,4 +1,6 @@
 //! Criterion benchmarks for the slab-pool alloc/free hot path.
+// Test-fixture code: unwrap/expect keep setup concise.
+#![allow(clippy::unwrap_used, clippy::expect_used)]
 
 use criterion::{criterion_group, criterion_main, Criterion};
 use slab_pool::SlabPool;

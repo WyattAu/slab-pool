@@ -373,6 +373,8 @@ pub struct PoolStats {
 }
 
 #[cfg(test)]
+// Test code: unwrap/expect are the idiomatic way to assert outcomes.
+#[allow(clippy::unwrap_used, clippy::expect_used)]
 mod tests {
     use super::*;
 

@@ -1,5 +1,7 @@
 // Temporarily disabled — see tracking below.
 #![cfg(all(feature = "loom", test))]
+// Test code: unwrap/expect are the idiomatic way to assert outcomes.
+#![allow(clippy::unwrap_used, clippy::expect_used)]
 
 //! Model-checking for the Treiber-stack free list with `loom`.
 //!
