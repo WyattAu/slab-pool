@@ -30,3 +30,7 @@ loom = ["dep:loom"]
 
 [lints.rust]
 unexpected_cfgs = { level = "warn", check-cfg = ['cfg(kani)'] }
+
+[lints.clippy]
+unwrap_used = "warn"
+expect_used = "warn"
