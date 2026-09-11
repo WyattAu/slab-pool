@@ -1,5 +1,9 @@
 # slab-pool
 
+[![docs.rs](https://docs.rs/slab-pool/badge.svg)](https://docs.rs/slab-pool)
+[![crates.io](https://img.shields.io/crates/v/slab-pool.svg)](https://crates.io/crates/slab-pool)
+[![License](https://img.shields.io/badge/license-MIT%2FApache--2.0-blue.svg)](LICENSE)
+
 Lock-free slab object pool with tagged-pointer ABA protection and RAII guards. Fixed-capacity object reuse with O(1) lock-free alloc/free — a CAS loop on an uncontended head is ~5ns vs ~20–40ns for mutex lock/unlock, and degrades to spin-retry rather than futex sleep under contention.
 
 ## Quick start

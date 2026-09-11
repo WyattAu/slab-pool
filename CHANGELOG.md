@@ -5,5 +5,12 @@ Changelog](https://keepachangelog.com/) — versions follow [semver](https://sem
 
 ## [Unreleased]
 
+## [0.1.0] - 2026-09-08
+
+### Added
+- Initial public release — lock-free Treiber slab with tagged-pointer
+  ABA protection.
+
+
 ### Added
 - Initial public release.
