@@ -11,7 +11,7 @@ fn bench_alloc_drop_uncontended(c: &mut Criterion) {
     c.bench_function("alloc_drop_uncontended", |b| {
         b.iter(|| {
             let guard = pool.alloc(42u64).expect("capacity");
-            criterion::black_box(&*guard);
+            std::hint::black_box(&*guard);
             drop(guard);
         })
     });
@@ -30,7 +30,7 @@ fn bench_alloc_drop_contended(c: &mut Criterion) {
                     handles.push(std::thread::spawn(move || {
                         for _ in 0..10_000u64 {
                             let guard = pool.alloc(0u64).expect("capacity");
-                            criterion::black_box(&*guard);
+                            std::hint::black_box(&*guard);
                             drop(guard);
                         }
                     }));
