@@ -10,7 +10,7 @@ concurrency:
   cancel-in-progress: true
 jobs:
   quality:
-    uses: WyattAu/engineering-standards/.github/workflows/rust-kit.yml@6956b54073bedaaf58ade71a6908a892c9addefd
+    uses: WyattAu/engineering-standards/.github/workflows/rust-kit.yml@e344f4c65bcdb6df979c557e25e351626b3cf7f9
     with:
       tier: c
       all-features: true
