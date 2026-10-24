@@ -1,9 +1,9 @@
 [package]
 name = "slab-pool"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 rust-version = "1.85"
-description = "Lock-free slab object pool — tagged-pointer ABA protection, RAII guards, thread-safe alloc/free"
+description = "Lock-free slab object pool: tagged-pointer ABA protection, RAII guards, loom+miri verified"
 license = "MIT OR Apache-2.0"
 repository = "https://github.com/WyattAu/slab-pool"
 keywords = ["pool", "slab", "lock-free", "arena", "allocator"]
