@@ -1,10 +1,10 @@
-# Requirements — slab-pool
+# Requirements: slab-pool
 
 Numbered, testable requirements. Every requirement maps to at least one named
 test; every security-relevant test cites at least one requirement. Threat
 IDs reference `THREAT-MODEL.md`.
 
-Scope note: `slab-pool` provides a lock-free slab object pool — tagged-pointer
+Scope note: `slab-pool` provides a lock-free slab object pool; tagged-pointer
 ABA protection on the free list, RAII `PoolGuard` return-to-pool, fixed
 capacity with non-blocking exhaustion, and `PoolStats` diagnostics.
 
@@ -26,7 +26,7 @@ capacity with non-blocking exhaustion, and `PoolStats` diagnostics.
 | REQ-SP-100 | ABA reuse cannot corrupt the free list: the tagged pointer increments a generation tag on every pop/push, so a stale CAS fails instead of resurrecting an old state (T1) | MUST |
 | REQ-SP-101 | Concurrent `alloc` cannot hand out the same slot twice: the head CAS transfers ownership atomically (T2) | MUST |
 | REQ-SP-102 | Double-free / use-after-drop is impossible through the safe API: slot return happens only in `PoolGuard::drop` on a guard that no longer dereferences after return (T3) | MUST |
-| REQ-SP-103 | Invalid construction (zero or `> MAX_SLOTS` capacity) is rejected eagerly — no lazy failure surface (T5) | MUST |
+| REQ-SP-103 | Invalid construction (zero or `> MAX_SLOTS` capacity) is rejected eagerly; no lazy failure surface (T5) | MUST |
 | REQ-SP-104 | The lock-free protocol is model-checked under loom: no double-alloc and stable push/pop roundtrips across all bounded interleavings | MUST |
 
 ## Robustness

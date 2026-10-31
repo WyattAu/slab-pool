@@ -1,4 +1,4 @@
-# Security Policy — `slab-pool`
+# Security Policy: `slab-pool`
 
 # Security Policy
 
@@ -24,7 +24,7 @@ credited in the advisory unless anonymity is requested.
 
 ## Scope
 
-In scope: anything that breaks the crate's documented security contract —
+In scope: anything that breaks the crate's documented security contract -
 panic on adversarial input in code paths documented as panic-free, signature/
 MAC bypass, timing side channels in secret-dependent operations, injection
 via parsed input, dependency-introduced vulnerabilities.
